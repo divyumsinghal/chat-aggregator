@@ -49,6 +49,11 @@ adk web --port 8000
 
 Open http://127.0.0.1:8000 in your browser and select the `chat_assistant` agent.
 
+Try prompts like:
+- "Tell me what I've missed"
+- "Summarize my unread messages"
+- "What needs my attention today?"
+
 ## Project Structure
 
 ```
