@@ -1,5 +1,14 @@
 import json
+from datetime import datetime
 from pathlib import Path
+
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+
+# Google Tasks API scope
+SCOPES = ["https://www.googleapis.com/auth/tasks"]
+TOKEN_FILE = Path(__file__).parent / "token.json"
 
 
 def get_emails() -> str:
@@ -83,3 +92,64 @@ def get_msteams() -> str:
         result += "\n"
 
     return result
+
+
+def _get_tasks_service():
+    """Get authenticated Google Tasks service.
+
+    Returns:
+        Google Tasks API service object, or None if not authenticated.
+    """
+    if not TOKEN_FILE.exists():
+        return None
+
+    creds = Credentials.from_authorized_user_file(str(TOKEN_FILE), SCOPES)
+
+    if creds and creds.expired and creds.refresh_token:
+        creds.refresh(Request())
+        with open(TOKEN_FILE, "w") as token:
+            token.write(creds.to_json())
+
+    return build("tasks", "v1", credentials=creds)
+
+
+def create_google_task(title: str, notes: str = "", due_date: str = "") -> str:
+    """Create a task in Google Tasks.
+
+    Args:
+        title: Task title (required)
+        notes: Optional task description/notes
+        due_date: Optional due date in YYYY-MM-DD format
+
+    Returns:
+        Confirmation message with task details or error message.
+    """
+    service = _get_tasks_service()
+    if not service:
+        return (
+            "Error: Google Tasks not authenticated. "
+            "Run 'python scripts/setup_google_auth.py' first."
+        )
+
+    task = {"title": title}
+
+    if notes:
+        task["notes"] = notes
+
+    if due_date:
+        try:
+            dt = datetime.strptime(due_date, "%Y-%m-%d")
+            task["due"] = dt.isoformat() + "Z"
+        except ValueError:
+            return f"Error: Invalid date format '{due_date}'. Use YYYY-MM-DD."
+
+    try:
+        result = service.tasks().insert(tasklist="@default", body=task).execute()
+        return (
+            f"Task created successfully!\n"
+            f"  Title: {result.get('title')}\n"
+            f"  ID: {result.get('id')}\n"
+            f"  Status: {result.get('status')}"
+        )
+    except Exception as e:
+        return f"Error creating task: {str(e)}"
