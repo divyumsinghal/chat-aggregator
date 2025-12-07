@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📱 Notification Dashboard</h1>
+            <p class="subtitle">View and export your notifications</p>
+            <button class="export-all-btn" id="export-all">Export All Chats to JSON</button>
+        </header>
+
+        <div class="dashboard">
+            <!-- Email Section -->
+            <section class="notification-section" data-platform="Email">
+                <div class="section-header">
+                    <h2>📧 Email</h2>
+                    <span class="badge unread-count" id="email-badge">0</span>
+                </div>
+                <div class="content-box" id="email-messages"></div>
+            </section>
+
+            <!-- Slack Section -->
+            <section class="notification-section" data-platform="Slack">
+                <div class="section-header">
+                    <h2>💬 Slack</h2>
+                    <span class="badge unread-count" id="slack-badge">0</span>
+                </div>
+                <div class="content-box" id="slack-messages"></div>
+            </section>
+
+            <!-- Teams Section -->
+            <section class="notification-section" data-platform="Teams">
+                <div class="section-header">
+                    <h2>👥 Teams</h2>
+                    <span class="badge unread-count" id="teams-badge">0</span>
+                </div>
+                <div class="content-box" id="teams-messages"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
