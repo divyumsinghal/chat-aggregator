@@ -1,4 +1,6 @@
-# Chat Aggregator
+# Jarvis TLDR
+
+TLDR For Work
 
 Aggregates and summarizes unread messages from multiple chat platforms (Slack, MS Teams, Email), extracts actionable insights, and automatically creates Google Tasks.
 
