@@ -1,14 +1,32 @@
 from google.adk.agents import LlmAgent, SequentialAgent, LoopAgent
 from google.adk.tools.agent_tool import AgentTool
-from utils import get_emails, get_slack, get_msteams
+from .utils import get_emails, get_slack, get_msteams
 
 summary_agent = LlmAgent(
-    name="summary_agent",
-    model="gemini-2.5-flash",
-    description="Summarizes chats and extracts actionable items.",
-    instruction="""You are an expert executive assistant. You will receive a consolidation of unread chats from various sources.
-    Your goal is to summarize these chats concisely and extract actionable items (todos, meetings, calendar invites).
-    Format the output clearly with "Summary" and "Actionable Items" sections.""",
+    name='summary_agent',
+    model='gemini-2.5-flash',
+    description='Summarizes chats and extracts actionable items.',
+    instruction='''You are an expert executive assistant. First, use your tools to fetch all unread messages from emails, Slack, and MS Teams.
+
+Analyze all messages and produce a summary with these sections:
+
+## Action Items
+List tasks assigned to the user with urgency level (HIGH/MEDIUM/LOW):
+- HIGH: Blocking others, has deadline today/tomorrow
+- MEDIUM: Has deadline this week, important but not blocking
+- LOW: Nice to do, no immediate deadline
+
+## Key Decisions
+Summarize important decisions made by the team that the user should be aware of.
+
+## Questions Awaiting Response
+List questions directed at the user that need answers, with urgency level.
+
+## Meetings & Calendar Events
+List any mentioned meetings, scheduled calls, or events with dates/times.
+Also suggest meetings that should be scheduled to discuss complex topics or resolve blockers identified in the messages.
+
+Be concise but thorough. This output will be passed to another agent for task creation.''',
     tools=[get_emails, get_slack, get_msteams],
     output_key="draft_summary",
 )

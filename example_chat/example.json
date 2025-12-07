@@ -1,0 +1,608 @@
+{
+  "id": "843a9fe7-2792-46a5-85d3-69e04b2a2218",
+  "appName": "chat_assistant",
+  "userId": "user",
+  "state": {
+    "draft_summary": "The summary has been verified.",
+    "verification_result": "VERIFICATION_PASSED",
+    "priority_actions": "Here is the summary of what you've missed, highlighting your prioritized actionable items, as previously provided and verified:\n\n---\n\n### Next Immediate Actions & Priority Recommendations\n\nBased on the information, here are the recommended priorities for your actionable items:\n\n---\n\n#### **Priority 0: Critical & Immediate (Do First Thing Monday)**\nThese items are either blocking a release or have an immediate deadline for Monday.\n\n1.  **Review PR #482 for the auth service**\n    *   **Context:** It's explicitly stated as \"blocking the release.\"\n    *   **Recommendation:** This is your top priority. Address it immediately to unblock the team.\n2.  **Bring engineering headcount projections to the Q4 budget review meeting**\n    *   **Context:** The meeting is tomorrow (Monday) at 2 pm.\n    *   **Recommendation:** Prepare these projections first thing Monday morning to ensure you're ready for the meeting.\n\n---\n\n#### **Priority 1: High Priority (Do Monday/Early This Week)**\nThese items have imminent deadlines, are daily duties, or are important tasks that need to be started or completed early in the week.\n\n3.  **Post your status on the integration work for Project Alpha**\n    *   **Context:** Reminder for standup, likely expected for Monday morning.\n    *   **Recommendation:** Provide your update as part of your regular Monday morning routine.\n4.  **Attend the All-hands meeting on Monday at 10 am**\n    *   **Context:** Mandatory attendance, moved to Monday 10 am.\n    *   **Recommendation:** Block this time on your calendar and ensure your attendance.\n5.  **Complete your direct reports' performance reviews in Workday**\n    *   **Context:** Due by December 15th.\n    *   **Recommendation:** Start scheduling time this week to work on these reviews to meet the deadline comfortably.\n6.  **Update the project roadmap**\n    *   **Context:** Due by Friday to reflect the API migration to January 15th.\n    *   **Recommendation:** Plan to get this done mid-week, allowing time for any necessary coordination.\n\n---\n\n#### **Priority 2: Medium Priority (Schedule This Week)**\nThese items are important but do not have an immediate blocking impact or an imminent deadline that requires immediate attention today or Monday morning.\n\n7.  **Join the customer feedback session on Thursday at 3 pm**\n    *   **Context:** Scheduled for Thursday at 3 pm.\n    *   **Recommendation:** Add this to your calendar and plan to attend to represent engineering.\n8.  **Update your local environments to PostgreSQL 16**\n    *   **Context:** Standardization for \"all new services.\"\n    *   **Recommendation:** While important for future development, it doesn't appear to be blocking current critical tasks. Schedule this update when you have a less urgent block of time.\n\n---\n\n**Summary of Critical Context:**\nBe aware that the CI pipeline is failing on main and the staging environment is down (ETA 2 hours). While not direct action items for you from this list, these are critical system states that may affect your work or require your attention if related to your projects."
+  },
+  "events": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "summarize what i've missed"
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "user",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "4ba484ea-bec4-469d-9259-54204d017bca",
+      "timestamp": 1765116943.729224
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "functionCall": {
+              "id": "adk-898a8fdd-9bff-41b0-8206-98766d201930",
+              "args": {},
+              "name": "get_slack"
+            },
+            "thoughtSignature": "CoQCAXLI2nyQnkTEMsdQ8vcdsKy_nOyzfHk2FocoiO6jdrXQmuWHSWmfYyg6zepVJaD5BpspJ8_JxtQJD9stRAyxpR8KeIS4o8_lukRr6ckfxYD41wF1qWJGlXI5HDV81gU2RM9wF3-o2Q7-OEyfL15UiymE0eGaJuY4L9qCnH5Ty_c-juFZz7dZqP42Iv6z_soOS3IlMOQgMcdu9Z6Hr5ICFqPmf9Tj7g0MM0i0vG_tsiGlAw-WUzwacNzey4AGt-jJquSVP3FtNamdQCCqhxPIsRWmcYPolrdsEwdjwFaSIQSULnSu9GEGqe14Y-k1WMeA1nrVP0eoDfWXcfE9Nd2pC_Xx4pw="
+          },
+          {
+            "functionCall": {
+              "id": "adk-7c339af1-f159-4f68-b8b4-a0f436770dd0",
+              "args": {},
+              "name": "get_msteams"
+            }
+          },
+          {
+            "functionCall": {
+              "id": "adk-afb8b7d9-fd1d-40da-af51-c867d412e27c",
+              "args": {},
+              "name": "get_emails"
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 32,
+        "promptTokenCount": 269,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 269
+          }
+        ],
+        "thoughtsTokenCount": 60,
+        "totalTokenCount": 361
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "summary_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "longRunningToolIds": [],
+      "id": "b8d1b11c-f9ee-4267-a9b9-e59602b88110",
+      "timestamp": 1765116943.739876
+    },
+    {
+      "content": {
+        "parts": [
+          {
+            "functionResponse": {
+              "id": "adk-898a8fdd-9bff-41b0-8206-98766d201930",
+              "name": "get_slack",
+              "response": {
+                "result": "=== UNREAD SLACK MESSAGES ===\n\nChannel: #engineering\n==============================\n  From: Alice Wong\n  Time: 2025-12-07T10:15:00Z\n  Message: @you Can you review PR #482 for the auth service? It's blocking the release.\n  -------------------------\n  From: Bob Smith\n  Time: 2025-12-07T10:30:00Z\n  Message: Team decision: We're standardizing on PostgreSQL 16 for all new services. Please update your local environments.\n  -------------------------\n  From: Carol Davis\n  Time: 2025-12-07T11:00:00Z\n  Message: The CI pipeline is failing on main. Anyone else seeing this? Need help debugging.\n  -------------------------\n\nChannel: #product\n==============================\n  From: David Lee\n  Time: 2025-12-07T09:45:00Z\n  Message: Customer feedback session scheduled for Thursday 3pm. @you are you available to join and represent engineering?\n  -------------------------\n  From: Emma Wilson\n  Time: 2025-12-07T10:00:00Z\n  Message: Decision made: We're prioritizing the mobile app redesign over the dashboard refresh for Q1.\n  -------------------------\n\n"
+              }
+            }
+          },
+          {
+            "functionResponse": {
+              "id": "adk-7c339af1-f159-4f68-b8b4-a0f436770dd0",
+              "name": "get_msteams",
+              "response": {
+                "result": "=== UNREAD MS TEAMS MESSAGES ===\n\nChannel: Project Alpha\n==============================\n  From: Frank Miller\n  Time: 2025-12-07T08:00:00Z\n  Message: Standup reminder: Please post your updates in the thread. @you what's your status on the integration work?\n  -------------------------\n  From: Grace Taylor\n  Time: 2025-12-07T08:45:00Z\n  Message: Blocker: The staging environment is down. DevOps is investigating. ETA 2 hours.\n  -------------------------\n\nChannel: Leadership\n==============================\n  From: Henry Brown\n  Time: 2025-12-06T17:00:00Z\n  Message: All-hands meeting moved to Monday 10am. Key topic: 2025 company goals. Attendance required.\n  -------------------------\n\n"
+              }
+            }
+          },
+          {
+            "functionResponse": {
+              "id": "adk-afb8b7d9-fd1d-40da-af51-c867d412e27c",
+              "name": "get_emails",
+              "response": {
+                "result": "=== UNREAD EMAILS ===\n\nFrom: Sarah Chen <sarah.chen@company.com>\nSubject: Q4 Budget Review Meeting\nTime: 2025-12-07T09:00:00Z\nBody: Hi team, reminder that we have the Q4 budget review tomorrow at 2pm. Please come prepared with your department estimates. @you - can you bring the engineering headcount projections?\n----------------------------------------\n\nFrom: Mike Johnson <mike.j@company.com>\nSubject: RE: API Migration Timeline\nTime: 2025-12-07T08:30:00Z\nBody: We decided to push the API migration to January 15th. All teams agreed this gives us buffer for the holiday freeze. Action item: Update the project roadmap by Friday.\n----------------------------------------\n\nFrom: HR Department <hr@company.com>\nSubject: Year-end Performance Reviews Due\nTime: 2025-12-06T16:00:00Z\nBody: Reminder: All manager performance reviews must be submitted by December 15th. Please complete your direct reports' reviews in Workday.\n----------------------------------------\n\n"
+              }
+            }
+          }
+        ],
+        "role": "user"
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "summary_agent",
+      "actions": {
+        "stateDelta": {},
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "b8563509-dc93-4947-b7c7-f2c85470fb17",
+      "timestamp": 1765116945.74424
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "Summary:\n\nYou have several updates across Slack, MS Teams, and Email.\n\n**Engineering & Product:**\n*   In #engineering, you need to review PR #482 for the auth service as it's blocking a release. The team is standardizing on PostgreSQL 16, and the CI pipeline is currently failing on main.\n*   In #product, the mobile app redesign is prioritized over the dashboard refresh for Q1.\n\n**Project Alpha & Leadership:**\n*   For Project Alpha, the staging environment is down with a 2-hour ETA for resolution.\n*   The All-hands meeting has moved to Monday 10 am to discuss 2025 company goals.\n\n**General Updates:**\n*   The API migration has been pushed to January 15th.\n*   Manager performance reviews are due by December 15th.\n\nActionable Items:\n\n*   **Review PR #482** for the auth service (Slack - #engineering).\n*   **Update your local environments** to PostgreSQL 16 (Slack - #engineering).\n*   **Join the customer feedback session** on Thursday at 3 pm to represent engineering (Slack - #product).\n*   **Post your status on the integration work** for Project Alpha (MS Teams - Project Alpha).\n*   **Attend the All-hands meeting** on Monday at 10 am (MS Teams - Leadership).\n*   **Bring engineering headcount projections** to the Q4 budget review meeting tomorrow at 2 pm (Email - Sarah Chen).\n*   **Update the project roadmap** by Friday to reflect the API migration to January 15th (Email - Mike Johnson).\n*   **Complete your direct reports' performance reviews** in Workday by December 15th (Email - HR Department).",
+            "thoughtSignature": "CrwNAXLI2nxbWa3ka8VBUQTuUL5dGyPwPjT01ryCCrQsb2Xi3TNCoEbIfr0bzI1T2_wsSFGpXu0TmpLPyElA3pzKAaUgGitheXWjtkXcR-avvhxI9x80UvBtuz3HW_CPjlqE0cccEAbB3uT1fyyDY4J6s1wdPOffpHz5r7nRvkuXBpwMuCv9J2omonBulm9HSVEJsDy0Spg-o-9UE4UKm3WHWd6nxBeh344IZQ0tAhL-C6CPVwAKZ_4g1TDJCoZgCo9O8FZ6xp_BcUY8xp6mgI7WqizhJ8KUTE-wN5cK60L4gJo3FkQ6Z58FZRwo-gLTo1SPwYQ1cPHR2clAfpShwmPV-1D4toF2CxM0fqQCDv9zGWYoOkLw6bypLHuLOdKXqe0Im53WyNGgN_dodKNv5dVaVOV0fyu9UZwtlEYzZn2whgwspYzLNY26dg8VaXGlUc9PMY7V178NDICN11dV8aDUID1SMwBH9E-YTmFEy_OeCtOXzioZi8r8qtOhwETsGxR07qjUr492OtmVHopkbpmLGu43tu6h69OfOtAlyu6dixVkmjvoI2PWPcYRdpc7YDlOx6C9q8leojHRMg9ZI_6Ml5jwrb7mqXCej8VZz7Wy7MTfrfe0enaWXonlmplicHZMUVoXu7NjqV-SSngluHHKWhjWR8Ryb_ZypuxkA6oL4N0wUFhitMX1FKc8b3Zs-SfLFQnz0vjoCbZX1lyqhsWcfC5uFfTXoRuWTOP9LwtMdeeoIp9weuQepI9x8F32bOu9hdamEKH7PObWCHR6p2M_4ly0xpj5wGSkF4YIMpyBTg_9OKGgBF8_8ZWjhjymuNu9Oadno-iCjOTMZk8ADNUZuVftCMm6WVhwSeCdG9ollWPFqJ_GA8a0u7bvCmhpOyiP-gD24pqHasm7ImZjSWdmPorBuBefDWjV-62aDE19vKNzJhgQWLWDqQy6ns-x11_5cE-QAxNrup-FQC1l2JK5lUEWXfQpNIrTuw5bPTtCeWzmgeUIdgnMjP34k1gS_bZo8Qy270ZcsRF9dLkhHaLpRYOR0Li80wA0mH-wwX7AyQKjq1CAdD9sAqLvB2nl7HwGOyLCGejs68OWMV09NoMz-NP-YE8MKfv46lIITcNO9AWVfAgLmrao7GrQLLIuz5BRCelcdHsOSU6-I2bxZvnBelmZO0Td1aBQYISWA5E911IRbZ6_Bm7rP40hf98Cc18xwxY_ejSqsqPRkpu7PHR9fO78bWgg62jLMao0ckfxvMv88MPjrPkTzNKCmkF_a9pD2iXiwlBB-hRRj80KBFO-V60819vvxsURapjoLhehs2loT7jDUn960x44b2xw1KMZY3VeYVtYtjOtKnIL8ZApdr0DWYdRU9ApG6MWBB1i7Kk612BU8lPER7v3O9fhJZrRYWEMhhhWiKgZUws3WmYYCORTzxRKXPspz1DN0FAhJSvm1gP8csgAezhSfdHoQ4TT1xQRiU7ErYAZrplkYj-2ZeJ70Wrs5_WOKOreT9lWQh-lFBY4pbo9JDxYcFv5RqZ8RN0G90sJaGf6IObA6RYModRYMPt13b9f6DzQwwPCteyvayJJXQU8kA_dCFdsfRzvm-oC0S5yueyahAjiVS1zP0ialdAK4TEMVm-t0i0ehENEa1giaIXwbtiazltNT3hSJ0e9E5CvKw0LkIHCA9S9cZgLYGANwq-GO2e_-dB7GvNEsa4ewrCp_cFWtwNCUGT65lNR2SJroggE2ghHJyLZ2EZEjU0WIQ2mTeCZT6m-XnQ6PLmDVY0XDUFDLZh6TDUXc_yQiYCPew-fu8hk2MrGmMAaCDcGtNLfhqqvkHjIMPORQMkkV7Y7rqabtcEHaMO5819XjVUC7rR0e1yjsA-GNMI6ZkYJYu77vtyJ2X8FX8jaeWh4VhbaoUZwXXhxVGNlyjIMYKJ93JBM7ACXg2ym_FQHC4n86rV7tEV9OOxZr_ShIEzEijw9cATRmGPa2MvPLAgikm80mLtUqNDD5naROyC0A0zD16Rp9I2s81o26YAZJeOmdk3nLdLM3PfBVPvgg51I0MtFdRV1oyGcsAGeqe5_j4jEXc0PCzYjRH4jr4CdjPufkQwJ_Y3RDuYieUlY7PicTDDvnCI5dqa7-Mmyvqe-5cmcxudXhJNLTQLeFvgVeaxufN-WoplbvvisOiQDJ7Z2Uc8B8cu8WwLcFWEiYhV5VDf4cSouSpsrN53-0T6wP1o8csT9x6lBNWGR86mD8L3Klat-3y38RtLFzuuxGe2Rh6gBb9x_YvnzmFoLydSiLeYGSwJbR3bdnpI="
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 382,
+        "promptTokenCount": 1204,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1204
+          }
+        ],
+        "thoughtsTokenCount": 409,
+        "totalTokenCount": 1995
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "summary_agent",
+      "actions": {
+        "stateDelta": {
+          "draft_summary": "Summary:\n\nYou have several updates across Slack, MS Teams, and Email.\n\n**Engineering & Product:**\n*   In #engineering, you need to review PR #482 for the auth service as it's blocking a release. The team is standardizing on PostgreSQL 16, and the CI pipeline is currently failing on main.\n*   In #product, the mobile app redesign is prioritized over the dashboard refresh for Q1.\n\n**Project Alpha & Leadership:**\n*   For Project Alpha, the staging environment is down with a 2-hour ETA for resolution.\n*   The All-hands meeting has moved to Monday 10 am to discuss 2025 company goals.\n\n**General Updates:**\n*   The API migration has been pushed to January 15th.\n*   Manager performance reviews are due by December 15th.\n\nActionable Items:\n\n*   **Review PR #482** for the auth service (Slack - #engineering).\n*   **Update your local environments** to PostgreSQL 16 (Slack - #engineering).\n*   **Join the customer feedback session** on Thursday at 3 pm to represent engineering (Slack - #product).\n*   **Post your status on the integration work** for Project Alpha (MS Teams - Project Alpha).\n*   **Attend the All-hands meeting** on Monday at 10 am (MS Teams - Leadership).\n*   **Bring engineering headcount projections** to the Q4 budget review meeting tomorrow at 2 pm (Email - Sarah Chen).\n*   **Update the project roadmap** by Friday to reflect the API migration to January 15th (Email - Mike Johnson).\n*   **Complete your direct reports' performance reviews** in Workday by December 15th (Email - HR Department)."
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "03e482b9-fb7d-4c8c-b991-7b48a3c0e716",
+      "timestamp": 1765116945.747921
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "The summary is largely accurate and well-supported by the original chats. However, there is one instance of missing context:\n\n**Missing Context:**\n*   In the \"Engineering & Product\" section, the summary states: \"The team is standardizing on PostgreSQL 16\".\n    *   The original chat from Bob Smith in #engineering states: \"Team decision: We're standardizing on PostgreSQL 16 **for all new services.** Please update your local environments.\"\n    *   The summary omits the important context \"for all new services\"."
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 115,
+        "promptTokenCount": 1480,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1480
+          }
+        ],
+        "thoughtsTokenCount": 1737,
+        "totalTokenCount": 3332
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "summary_fact_checker_agent",
+      "actions": {
+        "stateDelta": {
+          "verification_result": "The summary is largely accurate and well-supported by the original chats. However, there is one instance of missing context:\n\n**Missing Context:**\n*   In the \"Engineering & Product\" section, the summary states: \"The team is standardizing on PostgreSQL 16\".\n    *   The original chat from Bob Smith in #engineering states: \"Team decision: We're standardizing on PostgreSQL 16 **for all new services.** Please update your local environments.\"\n    *   The summary omits the important context \"for all new services\"."
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "af9a2288-f716-42bf-9905-8c372989253b",
+      "timestamp": 1765116950.245147
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "Summary:\n\nYou have several updates across Slack, MS Teams, and Email.\n\n**Engineering & Product:**\n*   In #engineering, you need to review PR #482 for the auth service as it's blocking a release. The team is standardizing on PostgreSQL 16 **for all new services**, and the CI pipeline is currently failing on main.\n*   In #product, the mobile app redesign is prioritized over the dashboard refresh for Q1.\n\n**Project Alpha & Leadership:**\n*   For Project Alpha, the staging environment is down with a 2-hour ETA for resolution.\n*   The All-hands meeting has moved to Monday 10 am to discuss 2025 company goals.\n\n**General Updates:**\n*   The API migration has been pushed to January 15th.\n*   Manager performance reviews are due by December 15th.\n\nActionable Items:\n\n*   **Review PR #482** for the auth service (Slack - #engineering).\n*   **Update your local environments** to PostgreSQL 16 (Slack - #engineering).\n*   **Join the customer feedback session** on Thursday at 3 pm to represent engineering (Slack - #product).\n*   **Post your status on the integration work** for Project Alpha (MS Teams - Project Alpha).\n*   **Attend the All-hands meeting** on Monday at 10 am (MS Teams - Leadership).\n*   **Bring engineering headcount projections** to the Q4 budget review meeting tomorrow at 2 pm (Email - Sarah Chen).\n*   **Update the project roadmap** by Friday to reflect the API migration to January 15th (Email - Mike Johnson).\n*   **Complete your direct reports' performance reviews** in Workday by December 15th (Email - HR Department).",
+            "thoughtSignature": "Cp0CAXLI2ny6i4fcm-9Biy_VxU8p_8PGsmpbbCLZohT6l145rX0afsQxX2zLaiBq6CfLcdYU90kGv75H7N7NHYTbzO7AJS-8oSBeXrOTci8phM0YZSlWPGtWgalqORJfRpE7a3KiLQ-PKZ1ff9snHaW7sMI2fJqAeGTXlPZXOjfOHaCNLdeww_n0J5jRXhWs3aAd2aGqi2ddDy2avXDq1b6x99ptcQSc16g-FY5DJ0c0JEhSk7VAuv7-zHjRJORlUaUZuVZx6iO5-gUn458Wc9820nJHAceZdBfOc-AxYQd3PxutxJsQyN9aPvUX4zZlpcqMhnbGvY6XW3eGn0fSBIGMzck5uQJk-9Ywk3E86monaJIS6XPV9KKm_ZI7oLOY"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 387,
+        "promptTokenCount": 1717,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1717
+          }
+        ],
+        "thoughtsTokenCount": 53,
+        "totalTokenCount": 2157
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "summary_agent",
+      "actions": {
+        "stateDelta": {
+          "draft_summary": "Summary:\n\nYou have several updates across Slack, MS Teams, and Email.\n\n**Engineering & Product:**\n*   In #engineering, you need to review PR #482 for the auth service as it's blocking a release. The team is standardizing on PostgreSQL 16 **for all new services**, and the CI pipeline is currently failing on main.\n*   In #product, the mobile app redesign is prioritized over the dashboard refresh for Q1.\n\n**Project Alpha & Leadership:**\n*   For Project Alpha, the staging environment is down with a 2-hour ETA for resolution.\n*   The All-hands meeting has moved to Monday 10 am to discuss 2025 company goals.\n\n**General Updates:**\n*   The API migration has been pushed to January 15th.\n*   Manager performance reviews are due by December 15th.\n\nActionable Items:\n\n*   **Review PR #482** for the auth service (Slack - #engineering).\n*   **Update your local environments** to PostgreSQL 16 (Slack - #engineering).\n*   **Join the customer feedback session** on Thursday at 3 pm to represent engineering (Slack - #product).\n*   **Post your status on the integration work** for Project Alpha (MS Teams - Project Alpha).\n*   **Attend the All-hands meeting** on Monday at 10 am (MS Teams - Leadership).\n*   **Bring engineering headcount projections** to the Q4 budget review meeting tomorrow at 2 pm (Email - Sarah Chen).\n*   **Update the project roadmap** by Friday to reflect the API migration to January 15th (Email - Mike Johnson).\n*   **Complete your direct reports' performance reviews** in Workday by December 15th (Email - HR Department)."
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "bbbac349-9566-44bd-828b-5101803ff7ae",
+      "timestamp": 1765116960.079894
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "VERIFICATION_PASSED"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cacheTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1010
+          }
+        ],
+        "cachedContentTokenCount": 1010,
+        "candidatesTokenCount": 5,
+        "promptTokenCount": 1994,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1994
+          }
+        ],
+        "thoughtsTokenCount": 1308,
+        "totalTokenCount": 3307
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "summary_fact_checker_agent",
+      "actions": {
+        "stateDelta": {
+          "verification_result": "VERIFICATION_PASSED"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "9beef871-e686-4829-8093-5d744be0238f",
+      "timestamp": 1765116962.946628
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "The summary has been verified.",
+            "thoughtSignature": "CosEAXLI2nz4pEz3EBUn4U8vUlHPjuSSwhKnH1_VaiCn0v_ZsvzQFXg7bnozhFgQLb9yl-CAlYCeLJC59mF9FjPhQSpKrI6gqhWXDsKliTfemxHCkrfdjP2ai3asDjCs0s7zhxamSn0TEFiJNCXDrER9qecGQDMCzCWTr6GwYSzfW1XYFNvS-JuH-ENLcnVBFordc63p_eljPXMRhCw-CHRAtcx9jTG_8U1wuEc7VItV3M0KF2gXZiATE4a2wuVWfE3NOT1PMv7ZwAPikWt7RHjh6A-sPnviRb3QqdS1MYcsVzDYCqkkBteFsm4HTx74OrCGs0Kb_LqriYwI_tzw_gh2Pt0hbisNI6M80PfKliC8_AdtrK1-_ghk8HGvnrPuBeam6NppOka569gHwezRrv44Lzg0MBujWO8PqSvY1OQYc2Jh8KwYTlktNGe7xIOVEC1z_cv1CMDusKWfWAbou3YLRRdOdf4t4_vlt19KzvkJRhY_hwvYtAZO1e25fgblWjK2860XyOiO95dcfbmrNJsT61USkmQi8rTI3JKv9BwjT9pJ7Ki0nUWh_Re5M-tH7QSmPvnggg0Rpyf7a09PCPeaUNXtK4WZjcQJq8Fbeb1Zr5DTDuAgW7H7851j8yZaVWij8_gE2O6gW6zqMLDoNEuEOfve2prNXtyH717C1zlUd612QQSGEhsUVw_bmg=="
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cacheTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1693
+          }
+        ],
+        "cachedContentTokenCount": 1693,
+        "candidatesTokenCount": 6,
+        "promptTokenCount": 2125,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2125
+          }
+        ],
+        "thoughtsTokenCount": 98,
+        "totalTokenCount": 2229
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "summary_agent",
+      "actions": {
+        "stateDelta": {
+          "draft_summary": "The summary has been verified."
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "a4108c32-8264-46aa-8583-6758e28d6772",
+      "timestamp": 1765116969.911794
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "There is no new draft summary or original chats provided in this turn for verification. The previous turn stated \"The summary has been verified.\""
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cacheTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1007
+          }
+        ],
+        "cachedContentTokenCount": 1007,
+        "candidatesTokenCount": 27,
+        "promptTokenCount": 2017,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2017
+          }
+        ],
+        "thoughtsTokenCount": 80,
+        "totalTokenCount": 2124
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "summary_fact_checker_agent",
+      "actions": {
+        "stateDelta": {
+          "verification_result": "There is no new draft summary or original chats provided in this turn for verification. The previous turn stated \"The summary has been verified.\""
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "74951a7b-9f90-40bd-ae42-3bc52b5b56b9",
+      "timestamp": 1765116971.959325
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "Here are your next immediate actions and priority recommendations:\n\n### Next Immediate Actions & Priority Recommendations\n\nBased on the information, here are the recommended priorities for your actionable items:\n\n---\n\n#### **Priority 0: Critical & Immediate (Do First Thing Monday)**\nThese items are either blocking a release or have an immediate deadline for Monday.\n\n1.  **Review PR #482 for the auth service**\n    *   **Context:** It's explicitly stated as \"blocking the release.\"\n    *   **Recommendation:** This is your top priority. Address it immediately to unblock the team.\n2.  **Bring engineering headcount projections to the Q4 budget review meeting**\n    *   **Context:** The meeting is tomorrow (Monday) at 2 pm.\n    *   **Recommendation:** Prepare these projections first thing Monday morning to ensure you're ready for the meeting.\n\n---\n\n#### **Priority 1: High Priority (Do Monday/Early This Week)**\nThese items have imminent deadlines, are daily duties, or are important tasks that need to be started or completed early in the week.\n\n3.  **Post your status on the integration work for Project Alpha**\n    *   **Context:** Reminder for standup, likely expected for Monday morning.\n    *   **Recommendation:** Provide your update as part of your regular Monday morning routine.\n4.  **Attend the All-hands meeting on Monday at 10 am**\n    *   **Context:** Mandatory attendance, moved to Monday 10 am.\n    *   **Recommendation:** Block this time on your calendar and ensure your attendance.\n5.  **Complete your direct reports' performance reviews in Workday**\n    *   **Context:** Due by December 15th.\n    *   **Recommendation:** Start scheduling time this week to work on these reviews to meet the deadline comfortably.\n6.  **Update the project roadmap**\n    *   **Context:** Due by Friday to reflect the API migration to January 15th.\n    *   **Recommendation:** Plan to get this done mid-week, allowing time for any necessary coordination.\n\n---\n\n#### **Priority 2: Medium Priority (Schedule This Week)**\nThese items are important but do not have an immediate blocking impact or an imminent deadline that requires immediate attention today or Monday morning.\n\n7.  **Join the customer feedback session on Thursday at 3 pm**\n    *   **Context:** Scheduled for Thursday at 3 pm.\n    *   **Recommendation:** Add this to your calendar and plan to attend to represent engineering.\n8.  **Update your local environments to PostgreSQL 16**\n    *   **Context:** Standardization for \"all new services.\"\n    *   **Recommendation:** While important for future development, it doesn't appear to be blocking current critical tasks. Schedule this update when you have a less urgent block of time.\n\n---\n\n**Summary of Critical Context:**\nBe aware that the CI pipeline is failing on main and the staging environment is down (ETA 2 hours). While not direct action items for you from this list, these are critical system states that may affect your work or require your attention if related to your projects."
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 671,
+        "promptTokenCount": 2046,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2046
+          }
+        ],
+        "thoughtsTokenCount": 1749,
+        "totalTokenCount": 4466
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "next_actionable_items_agent",
+      "actions": {
+        "stateDelta": {
+          "priority_actions": "Here are your next immediate actions and priority recommendations:\n\n### Next Immediate Actions & Priority Recommendations\n\nBased on the information, here are the recommended priorities for your actionable items:\n\n---\n\n#### **Priority 0: Critical & Immediate (Do First Thing Monday)**\nThese items are either blocking a release or have an immediate deadline for Monday.\n\n1.  **Review PR #482 for the auth service**\n    *   **Context:** It's explicitly stated as \"blocking the release.\"\n    *   **Recommendation:** This is your top priority. Address it immediately to unblock the team.\n2.  **Bring engineering headcount projections to the Q4 budget review meeting**\n    *   **Context:** The meeting is tomorrow (Monday) at 2 pm.\n    *   **Recommendation:** Prepare these projections first thing Monday morning to ensure you're ready for the meeting.\n\n---\n\n#### **Priority 1: High Priority (Do Monday/Early This Week)**\nThese items have imminent deadlines, are daily duties, or are important tasks that need to be started or completed early in the week.\n\n3.  **Post your status on the integration work for Project Alpha**\n    *   **Context:** Reminder for standup, likely expected for Monday morning.\n    *   **Recommendation:** Provide your update as part of your regular Monday morning routine.\n4.  **Attend the All-hands meeting on Monday at 10 am**\n    *   **Context:** Mandatory attendance, moved to Monday 10 am.\n    *   **Recommendation:** Block this time on your calendar and ensure your attendance.\n5.  **Complete your direct reports' performance reviews in Workday**\n    *   **Context:** Due by December 15th.\n    *   **Recommendation:** Start scheduling time this week to work on these reviews to meet the deadline comfortably.\n6.  **Update the project roadmap**\n    *   **Context:** Due by Friday to reflect the API migration to January 15th.\n    *   **Recommendation:** Plan to get this done mid-week, allowing time for any necessary coordination.\n\n---\n\n#### **Priority 2: Medium Priority (Schedule This Week)**\nThese items are important but do not have an immediate blocking impact or an imminent deadline that requires immediate attention today or Monday morning.\n\n7.  **Join the customer feedback session on Thursday at 3 pm**\n    *   **Context:** Scheduled for Thursday at 3 pm.\n    *   **Recommendation:** Add this to your calendar and plan to attend to represent engineering.\n8.  **Update your local environments to PostgreSQL 16**\n    *   **Context:** Standardization for \"all new services.\"\n    *   **Recommendation:** While important for future development, it doesn't appear to be blocking current critical tasks. Schedule this update when you have a less urgent block of time.\n\n---\n\n**Summary of Critical Context:**\nBe aware that the CI pipeline is failing on main and the staging environment is down (ETA 2 hours). While not direct action items for you from this list, these are critical system states that may affect your work or require your attention if related to your projects."
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "adc985f1-d636-493f-a7d5-cc6b8429ce6e",
+      "timestamp": 1765116973.59828
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "VERIFICATION_PASSED"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 5,
+        "promptTokenCount": 2777,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2777
+          }
+        ],
+        "thoughtsTokenCount": 1834,
+        "totalTokenCount": 4616
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "next_actions_fact_checker_agent",
+      "actions": {
+        "stateDelta": {
+          "verification_result": "VERIFICATION_PASSED"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "682b340f-d834-45e7-a207-48cf74477ee7",
+      "timestamp": 1765116987.317646
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "The previously generated \"Next Immediate Actions & Priority Recommendations\" have been verified. Here is a summary of what you've missed, specifically highlighting your prioritized actionable items:\n\n---\n\n### Next Immediate Actions & Priority Recommendations\n\nBased on the information, here are the recommended priorities for your actionable items:\n\n---\n\n#### **Priority 0: Critical & Immediate (Do First Thing Monday)**\nThese items are either blocking a release or have an immediate deadline for Monday.\n\n1.  **Review PR #482 for the auth service**\n    *   **Context:** It's explicitly stated as \"blocking the release.\"\n    *   **Recommendation:** This is your top priority. Address it immediately to unblock the team.\n2.  **Bring engineering headcount projections to the Q4 budget review meeting**\n    *   **Context:** The meeting is tomorrow (Monday) at 2 pm.\n    *   **Recommendation:** Prepare these projections first thing Monday morning to ensure you're ready for the meeting.\n\n---\n\n#### **Priority 1: High Priority (Do Monday/Early This Week)**\nThese items have imminent deadlines, are daily duties, or are important tasks that need to be started or completed early in the week.\n\n3.  **Post your status on the integration work for Project Alpha**\n    *   **Context:** Reminder for standup, likely expected for Monday morning.\n    *   **Recommendation:** Provide your update as part of your regular Monday morning routine.\n4.  **Attend the All-hands meeting on Monday at 10 am**\n    *   **Context:** Mandatory attendance, moved to Monday 10 am.\n    *   **Recommendation:** Block this time on your calendar and ensure your attendance.\n5.  **Complete your direct reports' performance reviews in Workday**\n    *   **Context:** Due by December 15th.\n    *   **Recommendation:** Start scheduling time this week to work on these reviews to meet the deadline comfortably.\n6.  **Update the project roadmap**\n    *   **Context:** Due by Friday to reflect the API migration to January 15th.\n    *   **Recommendation:** Plan to get this done mid-week, allowing time for any necessary coordination.\n\n---\n\n#### **Priority 2: Medium Priority (Schedule This Week)**\nThese items are important but do not have an immediate blocking impact or an imminent deadline that requires immediate attention today or Monday morning.\n\n7.  **Join the customer feedback session on Thursday at 3 pm**\n    *   **Context:** Scheduled for Thursday at 3 pm.\n    *   **Recommendation:** Add this to your calendar and plan to attend to represent engineering.\n8.  **Update your local environments to PostgreSQL 16**\n    *   **Context:** Standardization for \"all new services.\"\n    *   **Recommendation:** While important for future development, it doesn't appear to be blocking current critical tasks. Schedule this update when you have a less urgent block of time.\n\n---\n\n**Summary of Critical Context:**\nBe aware that the CI pipeline is failing on main and the staging environment is down (ETA 2 hours). While not direct action items for you from this list, these are critical system states that may affect your work or require your attention if related to your projects."
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cacheTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2035
+          }
+        ],
+        "cachedContentTokenCount": 2035,
+        "candidatesTokenCount": 696,
+        "promptTokenCount": 2740,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2740
+          }
+        ],
+        "thoughtsTokenCount": 162,
+        "totalTokenCount": 3598
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "next_actionable_items_agent",
+      "actions": {
+        "stateDelta": {
+          "priority_actions": "The previously generated \"Next Immediate Actions & Priority Recommendations\" have been verified. Here is a summary of what you've missed, specifically highlighting your prioritized actionable items:\n\n---\n\n### Next Immediate Actions & Priority Recommendations\n\nBased on the information, here are the recommended priorities for your actionable items:\n\n---\n\n#### **Priority 0: Critical & Immediate (Do First Thing Monday)**\nThese items are either blocking a release or have an immediate deadline for Monday.\n\n1.  **Review PR #482 for the auth service**\n    *   **Context:** It's explicitly stated as \"blocking the release.\"\n    *   **Recommendation:** This is your top priority. Address it immediately to unblock the team.\n2.  **Bring engineering headcount projections to the Q4 budget review meeting**\n    *   **Context:** The meeting is tomorrow (Monday) at 2 pm.\n    *   **Recommendation:** Prepare these projections first thing Monday morning to ensure you're ready for the meeting.\n\n---\n\n#### **Priority 1: High Priority (Do Monday/Early This Week)**\nThese items have imminent deadlines, are daily duties, or are important tasks that need to be started or completed early in the week.\n\n3.  **Post your status on the integration work for Project Alpha**\n    *   **Context:** Reminder for standup, likely expected for Monday morning.\n    *   **Recommendation:** Provide your update as part of your regular Monday morning routine.\n4.  **Attend the All-hands meeting on Monday at 10 am**\n    *   **Context:** Mandatory attendance, moved to Monday 10 am.\n    *   **Recommendation:** Block this time on your calendar and ensure your attendance.\n5.  **Complete your direct reports' performance reviews in Workday**\n    *   **Context:** Due by December 15th.\n    *   **Recommendation:** Start scheduling time this week to work on these reviews to meet the deadline comfortably.\n6.  **Update the project roadmap**\n    *   **Context:** Due by Friday to reflect the API migration to January 15th.\n    *   **Recommendation:** Plan to get this done mid-week, allowing time for any necessary coordination.\n\n---\n\n#### **Priority 2: Medium Priority (Schedule This Week)**\nThese items are important but do not have an immediate blocking impact or an imminent deadline that requires immediate attention today or Monday morning.\n\n7.  **Join the customer feedback session on Thursday at 3 pm**\n    *   **Context:** Scheduled for Thursday at 3 pm.\n    *   **Recommendation:** Add this to your calendar and plan to attend to represent engineering.\n8.  **Update your local environments to PostgreSQL 16**\n    *   **Context:** Standardization for \"all new services.\"\n    *   **Recommendation:** While important for future development, it doesn't appear to be blocking current critical tasks. Schedule this update when you have a less urgent block of time.\n\n---\n\n**Summary of Critical Context:**\nBe aware that the CI pipeline is failing on main and the staging environment is down (ETA 2 hours). While not direct action items for you from this list, these are critical system states that may affect your work or require your attention if related to your projects."
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "04e41502-0eb0-46d8-913a-896cb46804d1",
+      "timestamp": 1765116995.951807
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "VERIFICATION_PASSED"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cacheTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2039
+          }
+        ],
+        "cachedContentTokenCount": 2039,
+        "candidatesTokenCount": 5,
+        "promptTokenCount": 3495,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3495
+          }
+        ],
+        "thoughtsTokenCount": 1732,
+        "totalTokenCount": 5232
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "next_actions_fact_checker_agent",
+      "actions": {
+        "stateDelta": {
+          "verification_result": "VERIFICATION_PASSED"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "025ed556-429a-40c7-90e4-f3efc054c9f1",
+      "timestamp": 1765117000.631821
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "Here is the summary of what you've missed, highlighting your prioritized actionable items, as previously provided and verified:\n\n---\n\n### Next Immediate Actions & Priority Recommendations\n\nBased on the information, here are the recommended priorities for your actionable items:\n\n---\n\n#### **Priority 0: Critical & Immediate (Do First Thing Monday)**\nThese items are either blocking a release or have an immediate deadline for Monday.\n\n1.  **Review PR #482 for the auth service**\n    *   **Context:** It's explicitly stated as \"blocking the release.\"\n    *   **Recommendation:** This is your top priority. Address it immediately to unblock the team.\n2.  **Bring engineering headcount projections to the Q4 budget review meeting**\n    *   **Context:** The meeting is tomorrow (Monday) at 2 pm.\n    *   **Recommendation:** Prepare these projections first thing Monday morning to ensure you're ready for the meeting.\n\n---\n\n#### **Priority 1: High Priority (Do Monday/Early This Week)**\nThese items have imminent deadlines, are daily duties, or are important tasks that need to be started or completed early in the week.\n\n3.  **Post your status on the integration work for Project Alpha**\n    *   **Context:** Reminder for standup, likely expected for Monday morning.\n    *   **Recommendation:** Provide your update as part of your regular Monday morning routine.\n4.  **Attend the All-hands meeting on Monday at 10 am**\n    *   **Context:** Mandatory attendance, moved to Monday 10 am.\n    *   **Recommendation:** Block this time on your calendar and ensure your attendance.\n5.  **Complete your direct reports' performance reviews in Workday**\n    *   **Context:** Due by December 15th.\n    *   **Recommendation:** Start scheduling time this week to work on these reviews to meet the deadline comfortably.\n6.  **Update the project roadmap**\n    *   **Context:** Due by Friday to reflect the API migration to January 15th.\n    *   **Recommendation:** Plan to get this done mid-week, allowing time for any necessary coordination.\n\n---\n\n#### **Priority 2: Medium Priority (Schedule This Week)**\nThese items are important but do not have an immediate blocking impact or an imminent deadline that requires immediate attention today or Monday morning.\n\n7.  **Join the customer feedback session on Thursday at 3 pm**\n    *   **Context:** Scheduled for Thursday at 3 pm.\n    *   **Recommendation:** Add this to your calendar and plan to attend to represent engineering.\n8.  **Update your local environments to PostgreSQL 16**\n    *   **Context:** Standardization for \"all new services.\"\n    *   **Recommendation:** While important for future development, it doesn't appear to be blocking current critical tasks. Schedule this update when you have a less urgent block of time.\n\n---\n\n**Summary of Critical Context:**\nBe aware that the CI pipeline is failing on main and the staging environment is down (ETA 2 hours). While not direct action items for you from this list, these are critical system states that may affect your work or require your attention if related to your projects."
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "cacheTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2033
+          }
+        ],
+        "cachedContentTokenCount": 2033,
+        "candidatesTokenCount": 686,
+        "promptTokenCount": 3459,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 3459
+          }
+        ],
+        "thoughtsTokenCount": 126,
+        "totalTokenCount": 4271
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "next_actionable_items_agent",
+      "actions": {
+        "stateDelta": {
+          "priority_actions": "Here is the summary of what you've missed, highlighting your prioritized actionable items, as previously provided and verified:\n\n---\n\n### Next Immediate Actions & Priority Recommendations\n\nBased on the information, here are the recommended priorities for your actionable items:\n\n---\n\n#### **Priority 0: Critical & Immediate (Do First Thing Monday)**\nThese items are either blocking a release or have an immediate deadline for Monday.\n\n1.  **Review PR #482 for the auth service**\n    *   **Context:** It's explicitly stated as \"blocking the release.\"\n    *   **Recommendation:** This is your top priority. Address it immediately to unblock the team.\n2.  **Bring engineering headcount projections to the Q4 budget review meeting**\n    *   **Context:** The meeting is tomorrow (Monday) at 2 pm.\n    *   **Recommendation:** Prepare these projections first thing Monday morning to ensure you're ready for the meeting.\n\n---\n\n#### **Priority 1: High Priority (Do Monday/Early This Week)**\nThese items have imminent deadlines, are daily duties, or are important tasks that need to be started or completed early in the week.\n\n3.  **Post your status on the integration work for Project Alpha**\n    *   **Context:** Reminder for standup, likely expected for Monday morning.\n    *   **Recommendation:** Provide your update as part of your regular Monday morning routine.\n4.  **Attend the All-hands meeting on Monday at 10 am**\n    *   **Context:** Mandatory attendance, moved to Monday 10 am.\n    *   **Recommendation:** Block this time on your calendar and ensure your attendance.\n5.  **Complete your direct reports' performance reviews in Workday**\n    *   **Context:** Due by December 15th.\n    *   **Recommendation:** Start scheduling time this week to work on these reviews to meet the deadline comfortably.\n6.  **Update the project roadmap**\n    *   **Context:** Due by Friday to reflect the API migration to January 15th.\n    *   **Recommendation:** Plan to get this done mid-week, allowing time for any necessary coordination.\n\n---\n\n#### **Priority 2: Medium Priority (Schedule This Week)**\nThese items are important but do not have an immediate blocking impact or an imminent deadline that requires immediate attention today or Monday morning.\n\n7.  **Join the customer feedback session on Thursday at 3 pm**\n    *   **Context:** Scheduled for Thursday at 3 pm.\n    *   **Recommendation:** Add this to your calendar and plan to attend to represent engineering.\n8.  **Update your local environments to PostgreSQL 16**\n    *   **Context:** Standardization for \"all new services.\"\n    *   **Recommendation:** While important for future development, it doesn't appear to be blocking current critical tasks. Schedule this update when you have a less urgent block of time.\n\n---\n\n**Summary of Critical Context:**\nBe aware that the CI pipeline is failing on main and the staging environment is down (ETA 2 hours). While not direct action items for you from this list, these are critical system states that may affect your work or require your attention if related to your projects."
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "7a7225a3-eed9-4ca7-b83c-112221b4cb45",
+      "timestamp": 1765117008.616037
+    },
+    {
+      "modelVersion": "gemini-2.5-flash",
+      "content": {
+        "parts": [
+          {
+            "text": "VERIFICATION_PASSED"
+          }
+        ],
+        "role": "model"
+      },
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "candidatesTokenCount": 5,
+        "promptTokenCount": 4203,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 4203
+          }
+        ],
+        "thoughtsTokenCount": 1983,
+        "totalTokenCount": 6191
+      },
+      "invocationId": "e-8375bce3-1578-4585-b2ad-b0ab19604ebc",
+      "author": "next_actions_fact_checker_agent",
+      "actions": {
+        "stateDelta": {
+          "verification_result": "VERIFICATION_PASSED"
+        },
+        "artifactDelta": {},
+        "requestedAuthConfigs": {},
+        "requestedToolConfirmations": {}
+      },
+      "id": "b8763bc2-8de4-4cd4-9195-f228818eb46d",
+      "timestamp": 1765117013.039154
+    }
+  ],
+  "lastUpdateTime": 1765117013.039154
+}
