@@ -9,3 +9,9 @@ dependencies = [
     "fastmcp>=2.13.3",
     "google-adk>=1.20.0",
 ]
+
+[dependency-groups]
+dev = [
+    "black>=25.11.0",
+    "pylint>=4.0.4",
+]
