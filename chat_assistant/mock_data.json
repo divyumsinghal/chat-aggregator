@@ -1,0 +1,90 @@
+{
+  "emails": [
+    {
+      "from": "Sarah Chen <sarah.chen@company.com>",
+      "subject": "Q4 Budget Review Meeting",
+      "timestamp": "2025-12-07T09:00:00Z",
+      "body": "Hi team, reminder that we have the Q4 budget review tomorrow at 2pm. Please come prepared with your department estimates. @you - can you bring the engineering headcount projections?"
+    },
+    {
+      "from": "Mike Johnson <mike.j@company.com>",
+      "subject": "RE: API Migration Timeline",
+      "timestamp": "2025-12-07T08:30:00Z",
+      "body": "We decided to push the API migration to January 15th. All teams agreed this gives us buffer for the holiday freeze. Action item: Update the project roadmap by Friday."
+    },
+    {
+      "from": "HR Department <hr@company.com>",
+      "subject": "Year-end Performance Reviews Due",
+      "timestamp": "2025-12-06T16:00:00Z",
+      "body": "Reminder: All manager performance reviews must be submitted by December 15th. Please complete your direct reports' reviews in Workday."
+    }
+  ],
+  "slack": {
+    "channels": [
+      {
+        "name": "#engineering",
+        "messages": [
+          {
+            "from": "Alice Wong",
+            "timestamp": "2025-12-07T10:15:00Z",
+            "text": "@you Can you review PR #482 for the auth service? It's blocking the release."
+          },
+          {
+            "from": "Bob Smith",
+            "timestamp": "2025-12-07T10:30:00Z",
+            "text": "Team decision: We're standardizing on PostgreSQL 16 for all new services. Please update your local environments."
+          },
+          {
+            "from": "Carol Davis",
+            "timestamp": "2025-12-07T11:00:00Z",
+            "text": "The CI pipeline is failing on main. Anyone else seeing this? Need help debugging."
+          }
+        ]
+      },
+      {
+        "name": "#product",
+        "messages": [
+          {
+            "from": "David Lee",
+            "timestamp": "2025-12-07T09:45:00Z",
+            "text": "Customer feedback session scheduled for Thursday 3pm. @you are you available to join and represent engineering?"
+          },
+          {
+            "from": "Emma Wilson",
+            "timestamp": "2025-12-07T10:00:00Z",
+            "text": "Decision made: We're prioritizing the mobile app redesign over the dashboard refresh for Q1."
+          }
+        ]
+      }
+    ]
+  },
+  "msteams": {
+    "channels": [
+      {
+        "name": "Project Alpha",
+        "messages": [
+          {
+            "from": "Frank Miller",
+            "timestamp": "2025-12-07T08:00:00Z",
+            "text": "Standup reminder: Please post your updates in the thread. @you what's your status on the integration work?"
+          },
+          {
+            "from": "Grace Taylor",
+            "timestamp": "2025-12-07T08:45:00Z",
+            "text": "Blocker: The staging environment is down. DevOps is investigating. ETA 2 hours."
+          }
+        ]
+      },
+      {
+        "name": "Leadership",
+        "messages": [
+          {
+            "from": "Henry Brown",
+            "timestamp": "2025-12-06T17:00:00Z",
+            "text": "All-hands meeting moved to Monday 10am. Key topic: 2025 company goals. Attendance required."
+          }
+        ]
+      }
+    ]
+  }
+}
