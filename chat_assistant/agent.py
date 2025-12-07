@@ -1,6 +1,6 @@
 from google.adk.agents import LlmAgent, SequentialAgent, LoopAgent
 from google.adk.tools.agent_tool import AgentTool
-from .utils import get_emails, get_slack, get_msteams
+from .utils import get_emails, get_slack, get_msteams, create_google_task
 
 summary_agent = LlmAgent(
     name='summary_agent',
@@ -107,9 +107,25 @@ next_actions_and_verify_loop = LoopAgent(
     max_iterations=3,
 )
 
+google_tasks_agent = LlmAgent(
+    name="google_tasks_agent",
+    model="gemini-2.5-flash",
+    description="Creates Google Tasks from the extracted reminders.",
+    instruction=(
+        "You are a task creation agent. Read the JSON in {priority_actions} "
+        "and create Google Tasks for each item in the 'reminders' array.\n\n"
+        "For each reminder:\n"
+        "1. Call create_google_task with the task description and due date\n"
+        "2. Report what was created\n\n"
+        "If the reminders array is empty, report that no tasks needed to be created.\n"
+        "If there are errors creating tasks, report them clearly."
+    ),
+    tools=[create_google_task],
+    output_key="tasks_created",
+)
 
 root_agent = SequentialAgent(
     name="root_agent",
-    description="Orchestrates the complete chat consolidation and verification process.",
-    sub_agents=[summarize_and_verify_loop, next_actions_and_verify_loop],
+    description="Orchestrates the complete chat consolidation, verification, and task creation process.",
+    sub_agents=[summarize_and_verify_loop, next_actions_and_verify_loop, google_tasks_agent],
 )
